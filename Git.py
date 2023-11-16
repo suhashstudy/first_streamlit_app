@@ -26,7 +26,7 @@ def get_github_branches(username, repository, token):
 # Replace these values with your GitHub username, repository, and personal access token
 github_username = 'suhashstudy'
 github_repository = 'Git_task'
-github_token = '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'
+github_token = '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'
 
 branches = get_github_branches(github_username, github_repository, github_token)
 
