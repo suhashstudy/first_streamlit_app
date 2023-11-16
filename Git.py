@@ -3,7 +3,7 @@ import requests
 def get_github_branches(username, repository, token):
     url = f'https://api.github.com/repos/{username}/{repository}/branches'
 
-    headers = {'Authorization': f'bearer {token}'}
+    headers = {'Authorization': f'token {token}'}
 
     response = requests.get(url, headers=headers)
 
@@ -19,7 +19,7 @@ def get_github_branches(username, repository, token):
 def get_github_folders(username, repository, branch, token):
     url = f'https://api.github.com/repos/{username}/{repository}/contents?ref={branch}'
 
-    headers = {'Authorization': f'bearer {token}'}
+    headers = {'Authorization': f'token {token}'}
 
     response = requests.get(url, headers=headers)
 
@@ -35,7 +35,7 @@ def get_github_folders(username, repository, branch, token):
 def get_github_files(username, repository, branch, folder, token):
     url = f'https://api.github.com/repos/{username}/{repository}/contents/{folder}?ref={branch}'
 
-    headers = {'Authorization': f'bearer {token}'}
+    headers = {'Authorization': f'token {token}'}
 
     response = requests.get(url, headers=headers)
 
@@ -51,7 +51,7 @@ def get_github_files(username, repository, branch, folder, token):
 def get_file_content(username, repository, branch, folder, file_name, token):
     url = f'https://raw.githubusercontent.com/{username}/{repository}/{branch}/{folder}/{file_name}'
 
-    headers = {'Authorization': f'bearer {token}'}
+    headers = {'Authorization': f'token {token}'}
 
     response = requests.get(url, headers=headers)
 
